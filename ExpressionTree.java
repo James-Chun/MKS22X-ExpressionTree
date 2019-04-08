@@ -5,8 +5,8 @@ public class ExpressionTree{
   /*return the expression as an infix notation string with parenthesis*/
   /* The sample tree would be: "(3 + (2 * 10))"     */
   public String toString(){
-    /*you are to write this method*/
-    return "";
+    if (isValue())  return getValue() + " ";
+    else return "(" + getLeft().toString() + " " + getOp() + " " + getRight().toString() + ")";
   }
 
   /*return the expression as a postfix notation string without parenthesis*/
@@ -20,8 +20,8 @@ public class ExpressionTree{
   /* The sample tree would be: "+ 3 * 2 10"     */
 
   public String toStringPrefix(){
-    /*you are to write this method*/
-    return "";
+    if (isValue())  return getValue() + " ";
+    else return getOp() + " " + getLeft().toStringPrefix() + " " + getRight().toStringPrefix();
   }
 
 
